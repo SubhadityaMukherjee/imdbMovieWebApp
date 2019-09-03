@@ -21,9 +21,18 @@ li{
     color:white;
 }
 
+p{
+  box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 20px 0 rgba(0, 0, 0, 0.30);
+  border-radius:15px;
+
+}
+
 .image {
 background:transparent;
 float:left;
+box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 20px 0 rgba(0, 0, 0, 0.30);
+border-radius:40px;
+
 }
 
 .a_nav {
@@ -61,8 +70,14 @@ background-color:#f44336;
 
 p{
     color:white;
-    font-size: 30px;
+    font-size: 25px;
     font-family:Avenir;
+    width: 20%;
+    padding:5px;
+    margin:auto;
+    margin-bottom:40px;
+    border-radius: 15px;
+
 }
 
 .search {
@@ -115,3 +130,32 @@ color:inherit;
 background:transparent;
 outline-width:0;
 }
+
+.ripple {
+  background-position: center;
+  transition: background 0.2s;
+}
+.ripple:hover {
+  background-size: 100%;
+  background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
+}
+.ripple:active {
+  background-color: #6eb9f7;
+  background-size: 100%;
+  transition: background 0s;
+}
+
+/* Button style */
+button {
+  border: none;
+  border-radius: 2px;
+  padding: 12px 18px;
+  font-size: 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: white;
+  background-color: #2196f3;
+  box-shadow: 0 0 4px #999;
+  outline: none;
+}
+

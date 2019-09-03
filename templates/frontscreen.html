@@ -18,55 +18,39 @@
 <head>
   <title>FindMyMovie! </title>
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css') }}" />
-  <script type="text/javascript" src="{{ url_for('static',filename='scripts/animate.js') }}"></script>
+
 </head>
-<body onload="main">
+<body onload="runner">
   <!-- navbar -->
 
   <ul class="nav">
     <li align="center">
-      <img class="image" src="{{ url_for('static', filename='images/icon.png') }}" width="60" height="60" /><a class="a_nav" href="#frontscreen">Find My Movie</a>
+      <img class="image" src="{{ url_for('static', filename='images/icon.png') }}" width="60" height="60" /><a class="a_nav" href="/">Find My Movie</a>
     </li>
-    <li align="right"></li>
+
   </ul><br />
 
-  <form align="center" action = "/" method="get">
+  <form align="center" action = "/" method="POST">
+    <div id="clock"></div>
 
     <img src="{{ url_for('static', filename='images/spot.png') }}" width="30%" height="30%">
     <!-- Search bar -->
     <p>Hover to search</p>
     <div class="cntr-innr">
-      <label class="search" for="inpt_search"><input id="inpt_search" type="text"/></label>
-    </div><input type="submit" name="sub" onclick="runner()" href="google.com"/>
+      <label class="search" for="inpt_search"><input name="inpt_search" id="inpt_search" type="text"/></label>
+    </div><input class="ripple" type="submit" name="sub" href="/movie"/>
   </form>
 
 
 <script type="text/javascript">
 
-  function main(){
-    runner();
-    timer();
-  }
+
     function runner(){
         console.log(document.getElementById("inpt_search").value)
-        location.href='#movie';
+        location.href='/movie';
+      }
 
-    function timer(){
-      let today = new Date();
-    let h = today.getHours();
-    let m = today.getMinutes();
-    let s = today.getSeconds();
-    // today.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', seconds:'numeric',hour12: true })
-    let p ="";
-    if(h>12){
-        p = "PM";
-    }else{
-        p = "AM";
-    }
-    let t = setTimeout(clk, 500);
-    document.getElementById("clock").innerHTML = h+":"+m+":"+s+" "+p;
-    }
-}
+
 
 </script>
 </body>

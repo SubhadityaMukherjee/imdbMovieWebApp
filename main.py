@@ -24,6 +24,7 @@ def getLinks(name):
             except Exception as e:
                 print(e)
     print('[INFO] Done with {}'.format('link'))
+    print(list_of_links[0])
     return list_of_links[0]
 
 
@@ -40,9 +41,19 @@ def getinfo(list_of_links):
         'trailer'
     ]
     dic = {}
-    fields = [results[x] for x in req_fields]
+    # fields = [results[x] for x in req_fields]
+    fields = []
+    for x in req_fields:
+        try:
+            fields.append(results[x])
+        except:
+            pass
+
     for a in range(len(req_fields)):
-        dic[req_fields[a]] = fields[a]
+        try:
+            dic[req_fields[a]] = fields[a]
+        except:
+            pass
 
     return dic
 
@@ -54,4 +65,4 @@ def return_summary(movie):
     return l
 
 
-# return_summary('man of steel')
+# print(return_summary('hitchikers guide to the galaxy'))
